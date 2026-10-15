@@ -10,9 +10,10 @@ export function SourceLinks({ ids }: { ids: string[] }) {
           <li key={id}>
             <a href={s.url} target="_blank" rel="noreferrer">
               {s.title}
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9" /></svg>
             </a>
-            {!s.verified && <span className="badge warn">TODO(verify)</span>}
-            {s.note && <div className="muted small">{s.note}</div>}
+            {!s.verified && <span className="tag warn">TODO(verify)</span>}
+            {s.note && <p className="note">{s.note}</p>}
           </li>
         );
       })}
